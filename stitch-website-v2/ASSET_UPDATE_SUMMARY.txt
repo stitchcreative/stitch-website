@@ -1,0 +1,125 @@
+STITCH WEBSITE V2 - ASSET UPDATE SUMMARY
+=========================================
+Date: 2026-03-13
+Tasks Completed: 5/5
+
+TASK 1: Copy New Assets Into Position
+======================================
+Status: COMPLETE
+
+Files copied:
+- Social Sharing Banner.png → images/og-default.png (485 KB)
+- 180x180 PP.png → images/apple-touch-icon.png (26 KB)
+- White NO TM.svg → images/logo-white.svg (4.5 KB)
+- Black NO TM.svg → images/logo-black.svg (4.5 KB)
+
+Source directory: images/Added for review - logos and social sharing images/
+
+
+TASK 2: Update OG Image References from .jpg to .png
+======================================================
+Status: COMPLETE
+
+Changes made:
+- Updated all HTML files to reference og-default.png instead of og-default.jpg
+- Used: find . -name "*.html" -exec sed -i 's/og-default\.jpg/og-default.png/g' {} +
+
+Verification results:
+- Files containing og-default.jpg: 0 (as expected)
+- Files containing og-default.png: 48 (as expected)
+
+Affected files: 48 HTML pages
+
+
+TASK 3: Replace All Inline Logo SVGs Across All Pages
+=======================================================
+Status: COMPLETE
+
+Old SVG specifications:
+- viewBox="0 0 249.38 67.74"
+- Contained TM symbol (separate <path d="M235.73...">)
+- fill="white" attribute
+
+New SVG specifications:
+- viewBox="0 0 122 33"
+- No TM symbol (removed)
+- fill="currentColor" attribute
+- Added aria-label="stitch."
+- Added role="img"
+- Added style="display:block"
+
+Aspect ratio comparison:
+- Old: 249.38/67.74 = 3.68:1
+- New: 122/33 = 3.70:1
+(Near-identical, existing CSS widths remain appropriate)
+
+Replacement statistics:
+- Total files processed: 49 HTML files
+- Files with replacements: 49
+- Total SVGs replaced: 98 (2 per page - nav and footer)
+
+Verification results:
+- Files containing old viewBox 249.38: 0 (as expected)
+- Files containing new viewBox 0 0 122 33: 49 (as expected)
+
+
+TASK 4: Update Nav-Logo CSS Width
+==================================
+Status: VERIFIED - NO CHANGES NEEDED
+
+Current CSS rules (verified as correct):
+- .nav-logo svg: height: 22px; width: 82px
+- .footer-logo svg: height: 18px; width: 68px
+
+Calculation verification:
+- New SVG at nav height 22px: 22 × 3.697 = 81.3px ≈ 82px ✓
+- New SVG at footer height 18px: 18 × 3.697 = 66.5px ≈ 68px ✓
+
+The CSS dimensions are already correct for the new SVG aspect ratio.
+
+
+TASK 5: JSON-LD Logo References
+================================
+Status: VERIFIED - NO CHANGES NEEDED
+
+Logo reference in JSON-LD:
+- "logo": "https://stitchcreative.co.uk/images/logo-white.svg"
+
+Status: Already correct
+- Pointing to logo-white.svg which has been updated with new version (no TM)
+- All 49 HTML files verified to contain this reference
+
+Files affected: 49 HTML pages
+
+
+SUMMARY OF CHANGES
+==================
+
+Files modified: 49 HTML files
+- Task 2: 48 files updated (og-default.jpg → og-default.png)
+- Task 3: 49 files updated (SVG replacements - both nav and footer)
+
+Assets created/updated: 4 image files
+- og-default.png: Social sharing image (485 KB)
+- apple-touch-icon.png: Apple touch icon (26 KB)
+- logo-white.svg: White logo without TM (4.5 KB)
+- logo-black.svg: Black logo without TM (4.5 KB)
+
+No breaking changes:
+- CSS dimensions remain unchanged and appropriate
+- JSON-LD references remain unchanged and valid
+- All 49 HTML pages successfully updated
+- Zero instances of old assets found
+
+
+VERIFICATION CHECKLIST
+======================
+✓ All 4 new assets copied to correct locations
+✓ og-default.jpg references completely removed (0 instances)
+✓ og-default.png references properly set (48 instances)
+✓ Old SVG viewBox 249.38 completely removed (0 instances)
+✓ New SVG viewBox 0 0 122 33 properly set (49 instances)
+✓ CSS dimensions verified as appropriate for new aspect ratio
+✓ JSON-LD logo references verified and valid
+
+All tasks completed successfully with zero errors.

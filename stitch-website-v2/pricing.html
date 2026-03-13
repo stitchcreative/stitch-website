@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="images/logo-white.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="images/favicon-16x16.png" type="image/png" sizes="16x16">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope — stitch.</title>
+  <meta name="description" content="How we scope, structure and deliver projects — from brief to shipment. Three engagement tracks, modular by design.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stitchcreative.co.uk/pricing.html">
+  <meta property="og:title" content="Scope — stitch.">
+  <meta property="og:description" content="How we scope, structure and deliver projects — from brief to shipment. Three engagement tracks, modular by design.">
+  <meta property="og:image" content="https://stitchcreative.co.uk/images/og-default.png">
+  <meta property="og:site_name" content="stitch.">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scope — stitch.">
+  <meta name="twitter:description" content="How we scope, structure and deliver projects — from brief to shipment. Three engagement tracks, modular by design.">
+  <meta name="twitter:image" content="https://stitchcreative.co.uk/images/og-default.png">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://stitchcreative.co.uk/pricing.html">
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#080808;--bg-2:#0e0e0e;--bg-card:#141414;--bg-hover:#1c1c1c;
+      --border:rgba(255,255,255,0.07);--border-med:rgba(255,255,255,0.13);
+      --text:#ffffff;--text-2:#888888;--text-3:#404040;
+      --accent:#6366f1;--accent-l:#818cf8;--accent-dim:rgba(99,102,241,0.10);
+      --green:#10b981;--green-dim:rgba(16,185,129,0.08);--green-border:rgba(16,185,129,0.20);
+      --amber:#f59e0b;--amber-dim:rgba(245,158,11,0.08);--amber-border:rgba(245,158,11,0.20);
+      --glass-bg:rgba(255,255,255,0.03);--glass-border:rgba(255,255,255,0.09);
+      --pad-x:clamp(20px,5vw,80px);--max-w:1280px;
+      --edge-pad: max(var(--pad-x), calc(50vw - var(--max-w)/2 + var(--pad-x)));
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+
+    .ripstop{background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0,rgba(0,0,0,.06) 1px,transparent 0,transparent 50%),repeating-linear-gradient(180deg,rgba(0,0,0,.06) 0,rgba(0,0,0,.06) 1px,transparent 0,transparent 50%);background-size:32px 32px}
+    .cursor-glow{position:fixed;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.10) 0%,transparent 60%);transform:translate(-50%,-50%);pointer-events:none;z-index:0}
+
+    .label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-l)}
+    .label-dot::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;position:relative;top:-1px}
+
+    .fade-up{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+    .fade-up.visible{opacity:1;transform:none}
+    .fade-up:nth-child(2){transition-delay:.08s}
+    .fade-up:nth-child(3){transition-delay:.16s}
+
+    /* ─── NAV ──────────────────────────────────────────────── */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x);height:100%;display:flex;align-items:center;justify-content:space-between}
+    #nav.scrolled{background:rgba(10,10,10,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:rgba(255,255,255,.10)}
+    .nav-logo{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.03em}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-links a{font-size:13px;font-weight:500;color:var(--text-2);transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--text)}
+    .nav-cta{font-size:13px;font-weight:500;padding:9px 20px;border-radius:100px;background:var(--glass-bg);backdrop-filter:blur(12px);border:1px solid var(--glass-border);color:var(--text);transition:all .2s}
+    .nav-cta:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+    .nav-actions{display:flex;align-items:center;gap:8px}
+    .nav-cta-ghost{font-size:13px;font-weight:500;padding:9px 20px;border-radius:100px;background:transparent;border:1px solid var(--border);color:var(--text-2);transition:all .2s}
+    .nav-cta-ghost:hover{border-color:var(--border-med);color:var(--text)}
+
+    /* ─── PAGE HEADER ──────────────────────────────────────── */
+    #page-header{padding:140px var(--edge-pad) 80px;position:relative;overflow:hidden}
+    .header-glow{pointer-events:none;position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 40% 60% at 75% 30%,rgba(99,102,241,.08) 0%,transparent 65%)}
+    .header-content{position:relative;z-index:1;max-width:var(--max-w);margin:0 auto}
+    .header-meta{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+    .header-meta::before{content:'';width:32px;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
+    h1.page-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,6vw,80px);font-weight:700;line-height:1.0;letter-spacing:-.035em;margin-bottom:24px}
+    .page-title .aw{color:var(--accent-l)}
+    .page-sub{font-size:clamp(15px,1.2vw,18px);color:var(--text-2);max-width:560px;line-height:1.7;margin-bottom:32px}
+    .header-note{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:13px;color:var(--text-2)}
+    .header-note strong{color:var(--text);font-weight:500}
+
+    /* ─── SERVICE JOURNEY DIAGRAM ──────────────────────────── */
+    #journey{padding:80px var(--edge-pad) 40px}
+    .journey-inner{max-width:var(--max-w);margin:0 auto}
+    .journey-label{text-align:center;margin-bottom:48px}
+    .journey-label h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.5vw,30px);font-weight:700;letter-spacing:-.03em;margin-bottom:12px}
+    .journey-label p{font-size:15px;color:var(--text-2);max-width:520px;margin:0 auto;line-height:1.7}
+
+    /* Phase track */
+    .journey-track{display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative;margin-bottom:52px}
+    .journey-track::before{content:'';position:absolute;top:19px;left:calc(100%/14);right:calc(100%/14);height:1px;background:linear-gradient(90deg,var(--accent),rgba(99,102,241,.3),var(--border));z-index:0}
+    .phase-dot{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative;z-index:1}
+    .phase-dot-circle{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+    .phase-dot.t1 .phase-dot-circle,.phase-dot.t2 .phase-dot-circle{background:var(--accent-dim);border:1.5px solid rgba(99,102,241,.35);color:var(--accent-l)}
+    .phase-dot.t1t2 .phase-dot-circle{background:rgba(99,102,241,.15);border:1.5px solid rgba(99,102,241,.5);color:var(--accent-l)}
+    .phase-dot.prod .phase-dot-circle{background:rgba(255,255,255,.04);border:1px dashed var(--border-med);color:var(--text-3)}
+    .phase-dot-label{font-size:10px;font-weight:500;color:var(--text-3);text-align:center;line-height:1.4;max-width:72px}
+
+    /* Tier brackets */
+    .tier-brackets{position:relative;height:36px;margin-bottom:52px}
+    .bracket{position:absolute;height:100%;display:flex;align-items:center;justify-content:center;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+    .bracket-t1{left:0;width:calc(200%/7 + 4px);background:var(--accent-dim);border:1px solid rgba(99,102,241,.2);color:var(--accent-l)}
+    .bracket-t2{left:0;width:calc(500%/7 + 4px);background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.15);color:var(--accent-l)}
+    .bracket-prod{right:0;width:calc(200%/7 + 4px);background:rgba(255,255,255,.03);border:1px dashed var(--border);color:var(--text-3)}
+
+    /* ─── PRICING CARDS ────────────────────────────────────── */
+    #pricing-cards{padding:0 var(--edge-pad) 80px}
+    .cards-inner{max-width:var(--max-w);margin:0 auto;display:flex;flex-direction:column;gap:2px}
+
+    .pricing-card{
+      display:grid;grid-template-columns:320px 1fr auto;
+      gap:0;background:var(--bg-card);border:1px solid var(--border);
+      border-radius:16px;overflow:hidden;transition:border-color .2s;
+    }
+    .pricing-card:hover{border-color:var(--border-med)}
+    .pricing-card.bespoke{opacity:.9}
+
+    /* Card left — price + meta */
+    .card-left{
+      padding:40px 36px;border-right:1px solid var(--border);
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .card-tier{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px}
+    .card-title{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin-bottom:20px}
+    .card-price-block{margin-top:auto}
+    .price-from-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
+    .price-figure{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,2.5vw,38px);font-weight:700;letter-spacing:-.04em;line-height:1}
+    .price-figure .price-unit{font-size:16px;font-weight:400;color:var(--text-2);letter-spacing:0}
+    .price-range-note{font-size:12px;color:var(--text-3);margin-top:8px;line-height:1.5}
+    .price-bespoke{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--text-2)}
+    .price-bespoke-note{font-size:13px;color:var(--text-3);margin-top:8px;line-height:1.5}
+
+    /* Card middle — scope */
+    .card-middle{padding:40px 36px;display:flex;flex-direction:column;gap:24px}
+    .card-outcome{
+      background:var(--bg);border:1px solid var(--border);
+      border-radius:10px;padding:16px 18px;
+    }
+    .outcome-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-l);margin-bottom:6px}
+    .outcome-text{font-size:13px;color:var(--text-2);line-height:1.6}
+    .card-includes-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px}
+    .card-includes{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .card-includes li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-2);line-height:1.5}
+    .card-includes li::before{
+      content:'';min-width:16px;height:16px;border-radius:50%;
+      background:var(--green-dim);border:1.5px solid var(--green-border);
+      background-image:url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3l2 2 4-4' stroke='%2310b981' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:center;
+      margin-top:2px;flex-shrink:0;
+    }
+    .card-includes li.not-included::before{
+      background:rgba(255,255,255,.04);border-color:var(--border);
+      background-image:url("data:image/svg+xml,%3Csvg width='8' height='2' viewBox='0 0 8 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h6' stroke='%23404040' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    }
+    .card-includes li.not-included{color:var(--text-3)}
+
+    /* Card right — CTA */
+    .card-right{
+      padding:40px 32px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:14px;min-width:180px;border-left:1px solid var(--border);
+      background:rgba(255,255,255,.01);
+    }
+    .card-cta{
+      display:block;text-align:center;width:100%;
+      padding:12px 20px;border-radius:100px;
+      font-size:13px;font-weight:500;transition:all .22s;white-space:nowrap;
+    }
+    .card-cta-primary{background:var(--accent);color:#fff;box-shadow:0 0 20px rgba(99,102,241,.2)}
+    .card-cta-primary:hover{background:var(--accent-l);transform:translateY(-1px)}
+    .card-cta-ghost{background:transparent;border:1px solid var(--border);color:var(--text-2)}
+    .card-cta-ghost:hover{border-color:var(--border-med);color:var(--text)}
+    .card-cta-note{font-size:11px;color:var(--text-3);text-align:center;line-height:1.5}
+
+    /* Bespoke card — override for 2-col layout */
+    .pricing-card.bespoke{grid-template-columns:320px 1fr}
+    .pricing-card.bespoke .card-middle{border-right:1px solid var(--border)}
+    .pricing-card.bespoke .card-right{border-left:none;min-width:unset;padding:40px 36px;align-items:flex-start}
+
+    /* ─── ADD-ONS ──────────────────────────────────────────── */
+    #addons{padding:0 var(--edge-pad) 80px}
+    .addons-inner{max-width:var(--max-w);margin:0 auto}
+    .addons-header{margin-bottom:28px}
+    .addons-header h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
+    .addons-header p{font-size:14px;color:var(--text-2)}
+    .addons-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:12px;overflow:hidden}
+    .addon-item{background:var(--bg-card);padding:24px 24px}
+    .addon-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px}
+    .addon-price{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+    .addon-desc{font-size:12px;color:var(--text-3);line-height:1.5}
+
+
+
+    /* ─── PAYMENT NOTE ─────────────────────────────────────── */
+    #payment-note{padding:0 var(--edge-pad) 60px}
+    .payment-note-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:flex-start;gap:18px;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px}
+    .pnote-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+    .pnote-body{font-size:13px;color:var(--text-2);line-height:1.7}
+    .pnote-body strong{color:var(--text);font-weight:500}
+
+    /* ─── EXCLUSIONS ───────────────────────────────────────── */
+    #exclusions{padding:0 var(--edge-pad) 80px}
+    .exclusions-inner{max-width:var(--max-w);margin:0 auto}
+    .excl-box{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:40px;display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+    .excl-left h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+    .excl-left p{font-size:14px;color:var(--text-2);line-height:1.7}
+    .excl-items{display:flex;flex-direction:column;gap:12px}
+    .excl-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-radius:10px}
+    .excl-icon{width:32px;height:32px;border-radius:8px;background:rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+    .excl-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
+    .excl-note{font-size:12px;color:var(--text-3);line-height:1.5}
+
+    /* ─── FAQ ──────────────────────────────────────────────── */
+    #faq{padding:0 var(--edge-pad) 80px}
+    .faq-inner{max-width:760px;margin:0 auto}
+    .faq-header{text-align:center;margin-bottom:44px}
+    .faq-header h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.8vw,32px);font-weight:700;letter-spacing:-.03em;margin-bottom:12px}
+    .faq-header p{font-size:15px;color:var(--text-2)}
+    .faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+    .faq-item:first-of-type{border-top:1px solid var(--border)}
+    .faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none}
+    .faq-q::after{content:'+';font-size:20px;font-weight:300;color:var(--text-3);flex-shrink:0;transition:transform .2s}
+    .faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--accent-l)}
+    .faq-a{font-size:14px;color:var(--text-2);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease}
+    .faq-item.open .faq-a{max-height:400px;padding-top:14px}
+
+    /* ─── CTA ──────────────────────────────────────────────── */
+    #pricing-cta{padding:0 var(--edge-pad) 120px}
+    .cta-box{max-width:var(--max-w);margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:clamp(48px,6vw,80px) clamp(32px,5vw,80px);display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;position:relative;overflow:hidden}
+    .cta-box::before{content:'';position:absolute;top:0;right:0;width:400px;height:400px;background:radial-gradient(circle at top right,rgba(99,102,241,.08),transparent 65%);pointer-events:none}
+    .cta-text{position:relative;z-index:1;max-width:500px}
+    .cta-text h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:700;letter-spacing:-.03em;line-height:1.2;margin-bottom:12px}
+    .cta-text p{font-size:15px;color:var(--text-2);line-height:1.7}
+    .cta-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;border-radius:100px;border:none;cursor:pointer;transition:all .22s;padding:13px 26px}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 24px rgba(99,102,241,.3)}
+    .btn-primary:hover{background:var(--accent-l);transform:translateY(-2px);box-shadow:0 4px 32px rgba(99,102,241,.45)}
+    .btn-ghost{background:var(--glass-bg);backdrop-filter:blur(12px);border:1px solid var(--glass-border);color:var(--text-2)}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.22);color:var(--text);transform:translateY(-1px)}
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer{padding:60px var(--edge-pad) 40px;border-top:1px solid var(--border);background:var(--bg)}
+    .footer-top{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:80px;margin-bottom:48px}
+    .footer-logo{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.03em;display:block;margin-bottom:12px;color:var(--text);transition:color .2s}
+    .footer-logo:hover{color:var(--accent-l)}
+    .footer-tagline{font-size:13px;color:var(--text-3);line-height:1.7;max-width:260px}
+    .footer-nav{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:40px}
+    .footer-col h4{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .footer-col ul a{font-size:13px;color:var(--text-2);transition:color .2s}
+    .footer-col ul a:hover{color:var(--text)}
+    .footer-bottom{max-width:var(--max-w);margin:0 auto;padding-top:28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-copy{font-size:12px;color:var(--text-3)}
+    .footer-social{display:flex;gap:10px}
+    .footer-social a{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:11px;font-weight:700;letter-spacing:.04em;transition:all .2s;text-transform:uppercase}
+    .footer-social a:hover{border-color:var(--border-med);color:var(--text-2)}
+    .footer-back-top{display:flex;align-items:flex-start;justify-content:flex-end}
+    #backToTop{display:flex;flex-direction:column;align-items:center;gap:10px;background:none;border:1px solid var(--border);border-radius:10px;padding:16px 20px;cursor:pointer;color:var(--text-2);transition:all .2s;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+    #backToTop:hover{border-color:var(--border-med);color:var(--text);transform:translateY(-2px)}
+
+    /* ─── RESPONSIVE ───────────────────────────────────────── */
+    @media(max-width:1100px){
+      .pricing-card{grid-template-columns:260px 1fr auto}
+      .pricing-card.bespoke{grid-template-columns:260px 1fr}
+    }
+    @media(max-width:960px){
+      .pricing-card,.pricing-card.bespoke{grid-template-columns:1fr}
+      .card-left{border-right:none;border-bottom:1px solid var(--border)}
+      .card-middle{border-right:none !important}
+      .card-right{border-left:none;border-top:1px solid var(--border);flex-direction:row;align-items:center;justify-content:flex-start;padding:24px 28px;min-width:unset}
+      .card-cta{width:auto}
+      .pricing-card.bespoke .card-right{padding:24px 28px}
+      .journey-track{grid-template-columns:repeat(4,1fr);gap:16px}
+      .journey-track::before{display:none}
+      .tier-brackets{display:none}
+      .tranches-inner{grid-template-columns:1fr}
+      .addons-row{grid-template-columns:1fr 1fr}
+      .excl-box{grid-template-columns:1fr;gap:28px}
+    }
+    @media(max-width:900px){
+      .footer-top{grid-template-columns:1fr;gap:40px}
+    }
+    @media(max-width:768px){
+      .nav-links,.nav-actions{display:none}
+      .nav-burger{display:flex !important}
+.nav-burger span{transition:transform .25s ease,opacity .25s ease;}
+      .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+      .nav-burger.open span:nth-child(2){opacity:0;}
+      .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+      #nav.nav-open{height:auto;background:var(--bg-2) !important;border-color:var(--border) !important;}
+      #nav.nav-open .nav-inner{height:auto;min-height:62px;flex-wrap:wrap;padding-bottom:20px;align-items:flex-start;justify-content:flex-start;}
+      #nav.nav-open .nav-logo{height:62px;display:flex;align-items:center;}
+      #nav.nav-open .nav-burger{margin-left:auto;align-self:center;}
+      #nav.nav-open .nav-links{display:flex !important;flex-direction:column;align-items:flex-start;width:100%;order:3;gap:0;border-top:1px solid var(--border);margin-top:0;padding-top:4px;}
+      #nav.nav-open .nav-links li{width:100%;}
+      #nav.nav-open .nav-links a{padding:13px 0;font-size:14px;display:block;border-bottom:1px solid var(--border);}
+      #nav.nav-open .nav-drop{display:none !important;}
+      #nav.nav-open .nav-actions{display:flex !important;order:4;width:100%;padding-top:16px;justify-content:flex-start;flex-direction:column;gap:8px;}
+      #nav.nav-open .nav-cta{width:100%;text-align:center;border-radius:8px;background:var(--accent);color:#fff;border-color:var(--accent);}
+      #nav.nav-open .nav-cta-ghost{width:100%;text-align:center;border-radius:8px;}
+      .footer-nav{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}.footer-tagline{max-width:100%}
+      .cta-box{flex-direction:column}
+      .addons-row{grid-template-columns:1fr}
+      /* Journey — vertical timeline on mobile */
+      .journey-track{display:flex;flex-direction:column;gap:0;padding-left:4px}
+      .journey-track::before{display:block !important;top:19px;bottom:19px;left:23px;right:auto;width:1px;height:auto}
+      .phase-dot{flex-direction:row;align-items:center;gap:14px;padding:10px 0}
+      .phase-dot-circle{width:38px;height:38px;min-width:38px}
+      .phase-dot-label{text-align:left;max-width:none;font-size:12px;color:var(--text-2)}
+    }
+  
+    /* ─── DARK MODE OVERRIDES ────────────────────────────────── */
+    html[data-theme="dark"] {
+      --bg:           #080808;
+      --bg-2:         #0e0e0e;
+      --bg-card:      #141414;
+      --bg-hover:     #1c1c1c;
+      --border:       rgba(255,255,255,0.07);
+      --border-med:   rgba(255,255,255,0.13);
+      --text:         #ffffff;
+      --text-2:       #888888;
+      --text-3:       #404040;
+      --accent-l:     #818cf8;
+      --accent-dim:   rgba(99,102,241,0.10);
+      --accent-glow:  rgba(99,102,241,0.06);
+      --glass-bg:     rgba(255,255,255,0.03);
+      --glass-border: rgba(255,255,255,0.09);
+    }
+    html[data-theme="light"] {
+      --bg:           #f5f5f7;
+      --bg-2:         #ffffff;
+      --bg-card:      #ffffff;
+      --bg-hover:     #ebebed;
+      --border:       rgba(0,0,0,0.08);
+      --border-med:   rgba(0,0,0,0.14);
+      --text:         #1d1d1f;
+      --text-2:       #6e6e73;
+      --text-3:       #adadb8;
+      --accent-l:     #4338ca;
+      --accent-dim:   rgba(99,102,241,0.08);
+      --accent-glow:  rgba(99,102,241,0.04);
+      --glass-bg:     rgba(0,0,0,0.02);
+      --glass-border: rgba(0,0,0,0.07);
+    }
+    html[data-theme="dark"] .ripstop {
+      background-image:
+        repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 0,transparent 50%),
+        repeating-linear-gradient(180deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 0,transparent 50%);
+    }
+    html[data-theme="light"] #nav.scrolled {
+      background:rgba(245,245,247,.88);
+      border-color:rgba(0,0,0,.08);
+    }
+    html[data-theme="light"] .nav-links a{color:rgba(0,0,0,.55)}
+    html[data-theme="light"] .nav-links a:hover,html[data-theme="light"] .nav-links a.active{color:#1d1d1f}
+    html[data-theme="light"] .nav-logo{color:#1d1d1f}
+    html[data-theme="dark"] .hero-mask { display:block; }
+
+    /* ─── THEME TOGGLE ─────────────────────────────────────── */
+    .theme-toggle {
+      width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+      background:none;border:1px solid var(--border-med);border-radius:100px;
+      cursor:pointer;color:var(--text-2);
+      transition:color .2s,border-color .2s;flex-shrink:0;padding:0;
+    }
+    .theme-toggle:hover{color:var(--text);border-color:var(--accent)}
+    .theme-toggle svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .icon-moon{display:none}.icon-sun{display:block}
+    html[data-theme="dark"] .icon-moon{display:none}
+    html[data-theme="dark"] .icon-sun{display:block}
+    html[data-theme="light"] .icon-moon{display:block}
+    html[data-theme="light"] .icon-sun{display:none}
+
+    /* ─── LOGO ANIMATION ───────────────────────────────────── */
+    .nav-logo{animation:logoIn .7s cubic-bezier(.16,1,.3,1) both}
+    @keyframes logoIn{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
+    .logo-dot{
+      color:var(--accent);display:inline-block;
+      animation:dotPop .9s cubic-bezier(.16,1,.3,1) .35s both;
+    }
+    @keyframes dotPop{from{transform:scale(0) translateY(3px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+  
+  
+    /* ─── SVG LOGO SWITCHING ─────────────────────────────── */
+    .nav-logo{flex-shrink:0;overflow:visible}
+    .nav-logo svg,.footer-logo svg{display:block;color:var(--text);transition:color .3s;overflow:visible}
+    .nav-logo svg{height:22px;width:82px}
+    .footer-logo svg{height:18px;width:68px}
+      /* ─── TESTIMONIALS ───────────────────────────────────── */
+    #testimonials{padding:100px 0;background:var(--bg-2);}
+    .testi-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:1px;
+      background:var(--border);border:1px solid var(--border);
+      border-radius:12px;overflow:hidden;margin-top:64px;
+    }
+    .testi-card{
+      background:var(--bg-2);padding:52px 48px;
+      display:flex;flex-direction:column;gap:32px;
+    }
+    .testi-quote{
+      font-size:clamp(17px,1.4vw,21px);line-height:1.65;
+      color:var(--text);font-weight:400;
+      position:relative;
+    }
+    .testi-quote::before{
+      content:'\201C';
+      font-size:80px;line-height:.6;color:var(--accent);opacity:.4;
+      display:block;margin-bottom:12px;font-family:Georgia,serif;
+    }
+    .testi-author{display:flex;flex-direction:column;gap:4px;margin-top:auto;}
+    .testi-name{font-size:15px;font-weight:600;color:var(--text);}
+    .testi-role{font-size:13px;color:var(--text-3);}
+    @media(max-width:768px){
+      .testi-grid{grid-template-columns:1fr;}
+      .testi-card{padding:40px 32px;}
+    }
+
+
+          .nav-burger{
+      display:none;flex-direction:column;gap:5px;
+      cursor:pointer;padding:4px;
+    }
+    .nav-burger span{width:22px;height:1.5px;background:var(--text)}
+    /* ─── NAV DROPDOWNS ──────────────────────────────────── */
+    .nav-links li{position:relative}
+    .has-drop > a{display:inline-flex;align-items:center;gap:4px}
+    .has-drop > a .chev{
+      width:8px;height:8px;opacity:.5;transition:transform .2s,opacity .2s;
+      flex-shrink:0;
+    }
+    .has-drop:hover > a .chev{transform:rotate(180deg);opacity:.8}
+
+    .nav-drop{
+      position:absolute;top:100%;padding-top:16px;
+      left:50%;transform:translateX(-50%) translateY(-6px);
+      background:#ffffff;
+      border:1px solid rgba(0,0,0,.08);border-radius:16px;
+      padding:6px;
+      opacity:0;pointer-events:none;
+      transition:opacity .16s ease,transform .16s ease;
+      box-shadow:0 12px 40px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.05);
+      z-index:300;
+      --text:    #1d1d1f;
+      --text-2:  #6e6e73;
+      --text-3:  #adadb8;
+      --bg-hover:#ebebed;
+      --border:  rgba(0,0,0,.08);
+    }
+    html[data-theme="dark"] .nav-drop{
+      background:#1c1c1e;
+      border-color:rgba(255,255,255,.10);
+      box-shadow:0 12px 40px rgba(0,0,0,.4),0 2px 8px rgba(0,0,0,.2);
+      --text:    rgba(240,240,250,1);
+      --text-2:  rgba(200,200,220,.72);
+      --text-3:  rgba(160,160,190,.50);
+      --bg-hover:rgba(255,255,255,.08);
+      --border:  rgba(255,255,255,.10);
+    }
+    .has-drop:hover .nav-drop{
+      opacity:1;pointer-events:auto;
+      transform:translateX(-50%) translateY(0);
+    }
+    .drop-services{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;min-width:500px}
+    .drop-card{
+      display:block;padding:18px 20px;border-radius:12px;
+      text-decoration:none;transition:background .15s;
+    }
+    .drop-card:hover{background:var(--bg-hover)}
+    .drop-icon{
+      width:34px;height:34px;border-radius:9px;
+      background:var(--accent-dim);display:flex;align-items:center;justify-content:center;
+      margin-bottom:12px;
+    }
+    .drop-icon svg{width:16px;height:16px;stroke:var(--accent-l);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .drop-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text);letter-spacing:-.01em;margin-bottom:5px}
+    .drop-desc{font-size:11.5px;color:var(--text-2);line-height:1.55}
+    .drop-work{min-width:200px}
+    .drop-link{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:11px 14px;border-radius:10px;
+      font-size:13px;color:var(--text-2);
+      text-decoration:none;transition:background .15s,color .15s;white-space:nowrap;
+    }
+    .drop-link:hover{background:var(--bg-hover);color:var(--text)}
+    .drop-link-tag{
+      font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--accent-l);background:var(--accent-dim);
+      padding:2px 8px;border-radius:100px;flex-shrink:0;
+    }
+    .drop-link-tag--new{color:#16a34a;background:rgba(22,163,74,.12)}
+    html[data-theme="dark"] .drop-link-tag--new{color:#4ade80;background:rgba(74,222,128,.12)}
+    .drop-divider{height:1px;background:var(--border);margin:4px 6px}
+
+  
+    @media(max-width:640px){.hero-actions,.cta-actions,.soon-actions{flex-direction:column;align-items:stretch;gap:10px}.hero-actions .btn,.cta-actions .btn,.soon-actions .btn{width:100%;justify-content:center;text-align:center}}
+    </style>
+  <script>
+    /* Prevent dark-mode FOUC */
+    (function(){var t=localStorage.getItem('stitch-theme'),d=document.documentElement;if(t==='light')d.setAttribute('data-theme','light');else if(t==='dark')d.setAttribute('data-theme','dark');})();
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9QMVWLSLT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S9QMVWLSLT');
+  </script>
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav id="nav">
+    <div class="nav-inner">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122 33" fill="currentColor" aria-label="stitch." role="img" style="display:block"><path d="M4.21213 32.279C2.45096 31.7967 1.05181 31.1927 0 30.457L2.04002 26.4331C3.06247 27.1103 4.28551 27.6559 5.7189 28.0651C7.1523 28.4743 8.56123 28.6789 9.9506 28.6789C13.1256 28.6789 14.7155 27.8459 14.7155 26.1798C14.7155 25.3906 14.3095 24.8401 13.5023 24.5283C12.6951 24.2166 11.3987 23.9194 9.60815 23.6369C7.73446 23.3543 6.21301 23.0279 5.034 22.6625C3.855 22.2972 2.83744 21.6541 1.97153 20.7334C1.10562 19.8175 0.675114 18.5363 0.675114 16.8995C0.675114 14.756 1.57527 13.0363 3.37557 11.7551C5.17588 10.469 7.60727 9.82596 10.6697 9.82596C12.2303 9.82596 13.7909 10.0013 15.3466 10.357C16.9072 10.7126 18.1841 11.1851 19.1772 11.7746L17.1371 15.7985C15.2096 14.6683 13.0375 14.1032 10.6306 14.1032C9.07001 14.1032 7.88612 14.337 7.07892 14.8047C6.27171 15.2724 5.86567 15.8862 5.86567 16.6462C5.86567 17.4938 6.29617 18.093 7.16208 18.4486C8.02799 18.8043 9.36843 19.1355 11.1834 19.4424C12.9984 19.725 14.4856 20.0514 15.6499 20.4167C16.8143 20.7821 17.8123 21.4057 18.6488 22.2826C19.4854 23.1594 19.9061 24.4017 19.9061 26.0093C19.9061 28.1284 18.9864 29.8237 17.142 31.0904C15.2977 32.3618 12.788 32.9951 9.61304 32.9951C7.76871 32.9951 5.9684 32.7564 4.21213 32.2741V32.279Z" fill="currentColor"/><path d="M36.6714 31.4752C36.0452 31.9819 35.2869 32.3667 34.3966 32.62C33.5062 32.8734 32.562 33 31.5689 33C29.0739 33 27.1464 32.3521 25.7815 31.0514C24.4215 29.7507 23.7415 27.8605 23.7415 25.376V14.4881H19.999V10.2498H23.7415V5.08105H29.0593V10.2498H35.1402V14.4881H29.0593V25.2493C29.0593 26.3503 29.3283 27.1931 29.8665 27.7679C30.4046 28.3477 31.1873 28.6351 32.2049 28.6351C33.3937 28.6351 34.3868 28.3233 35.1842 27.7046L36.6714 31.4752Z" fill="currentColor"/><path d="M39.817 5.44154C39.1664 4.8326 38.8386 4.0775 38.8386 3.17626C38.8386 2.27502 39.1664 1.51993 39.817 0.910983C40.4677 0.302037 41.2798 0 42.2435 0C43.2073 0 44.0145 0.292294 44.67 0.867139C45.3207 1.44686 45.6485 2.17272 45.6485 3.0496C45.6485 3.98007 45.3305 4.76439 44.6896 5.40257C44.0536 6.03587 43.2366 6.3574 42.2435 6.3574C41.2504 6.3574 40.4726 6.05536 39.817 5.44641V5.44154ZM39.5627 10.0841H44.8804V32.7028H39.5627V10.0841Z" fill="currentColor"/><path d="M64.0233 31.4752C63.3971 31.9819 62.6389 32.3667 61.7485 32.62C60.8532 32.8734 59.9139 33 58.9208 33C56.4259 33 54.4984 32.3521 53.1335 31.0514C51.7734 29.7507 51.0934 27.8605 51.0934 25.376V14.4881H47.351V10.2498H51.0934V5.08105H56.4112V10.2498H62.4921V14.4881H56.4112V25.2493C56.4112 26.3503 56.6802 27.1931 57.2184 27.7679C57.7565 28.3477 58.5393 28.6351 59.5568 28.6351C60.7456 28.6351 61.7387 28.3233 62.5361 27.7046L64.0233 31.4752Z" fill="currentColor"/><path d="M70.2314 31.5142C68.3578 30.5252 66.8999 29.1514 65.8481 27.3831C64.8012 25.6196 64.2728 23.6222 64.2728 21.391C64.2728 19.1599 64.7963 17.1674 65.8481 15.4185C66.895 13.6696 68.3529 12.3007 70.207 11.3118C72.066 10.3228 74.1843 9.83081 76.5668 9.83081C78.8073 9.83081 80.7691 10.2839 82.4569 11.1851C84.1447 12.0912 85.4117 13.3871 86.263 15.0824L82.178 17.4548C81.5274 16.4123 80.7104 15.628 79.732 15.1018C78.7535 14.5806 77.6822 14.3175 76.5227 14.3175C74.5365 14.3175 72.8928 14.9606 71.5866 16.2467C70.2804 17.5328 69.6297 19.2476 69.6297 21.3959C69.6297 23.5443 70.2755 25.2591 71.567 26.5403C72.8585 27.8264 74.5072 28.4694 76.5227 28.4694C77.6871 28.4694 78.7535 28.2064 79.732 27.6851C80.7104 27.1639 81.5274 26.3795 82.178 25.3321L86.263 27.7046C85.3824 29.3999 84.1006 30.7055 82.4129 31.6213C80.7251 32.5372 78.778 33 76.5619 33C74.2087 33 72.0953 32.508 70.2217 31.519L70.2314 31.5142Z" fill="currentColor"/><path d="M108.943 12.3251C110.675 13.9911 111.536 16.461 111.536 19.7396V32.7028H106.218V20.4167C106.218 18.4389 105.748 16.9482 104.814 15.9495C103.88 14.946 102.544 14.4442 100.817 14.4442C98.8602 14.4442 97.3143 15.0288 96.1793 16.2028C95.0444 17.3769 94.4769 19.0625 94.4769 21.2644V32.7028H89.1591V1.27148H94.4769V12.7099C95.3574 11.7795 96.4386 11.0633 97.7301 10.5713C99.0217 10.0793 100.46 9.83083 102.05 9.83083C104.912 9.83083 107.211 10.6639 108.943 12.3299V12.3251Z" fill="currentColor"/><path d="M116.046 32.0013C115.366 31.3388 115.024 30.496 115.024 29.4827C115.024 28.4694 115.356 27.5926 116.022 26.9398C116.687 26.2918 117.519 25.9655 118.512 25.9655C119.505 25.9655 120.332 26.2918 121.002 26.9398C121.667 27.5877 122 28.4353 122 29.4827C122 30.5301 121.658 31.3388 120.978 32.0013C120.298 32.6639 119.476 32.9951 118.512 32.9951C117.548 32.9951 116.726 32.6639 116.046 32.0013Z" fill="currentColor"/></svg></a>
+  <ul class="nav-links">
+      <li class="has-drop">
+        <a href="work.html">Work <svg class="chev" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="1,1 5,5 9,1"/></svg></a>
+        <div class="nav-drop drop-work">
+          <a href="work.html" class="drop-link">All projects</a>
+          <div class="drop-divider"></div>
+          <a href="case-study-mous-25l.html" class="drop-link">Mous: Extreme Commuter 25L <span class="drop-link-tag">Case study</span></a>
+          <a href="case-study-m24.html" class="drop-link">M-24: Recycled Tarp Bags <span class="drop-link-tag">Case study</span></a>
+          <a href="case-study-dvrge.html" class="drop-link">DVRGE: Performance Travel <span class="drop-link-tag">Case study</span></a>
+          <a href="case-study-reika-travel.html" class="drop-link">Reika: 35L Travel Pack <span class="drop-link-tag">Case study</span></a>
+        </div>
+      </li>
+      <li class="has-drop">
+        <a href="services.html">Services <svg class="chev" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="1,1 5,5 9,1"/></svg></a>
+        <div class="nav-drop drop-services">
+          <a href="services.html#design" class="drop-card">
+            <div class="drop-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+            <div class="drop-name">Design</div>
+            <div class="drop-desc">Brief to production-ready spec, tech packs, and factory introduction.</div>
+          </a>
+          <a href="services.html#development" class="drop-card">
+            <div class="drop-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <div class="drop-name">Development</div>
+            <div class="drop-desc">Concept through approved sample with factory access and sampling velocity.</div>
+          </a>
+          <a href="services.html#manufacturing" class="drop-card">
+            <div class="drop-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><polyline points="16 21 16 3 8 3 8 21"/></svg></div>
+            <div class="drop-name">Manufacturing</div>
+            <div class="drop-desc">PO to delivery with inline QC, AQL inspection, and shipping coordination.</div>
+          </a>
+        </div>
+      </li>
+
+      <li><a href="process.html">Process</a></li>
+      <li><a href="pricing.html" class="active">Scope</a></li>
+      <li><a href="journal.html">Journal</a></li>      <li><a href="about.html">About</a></li>
+    </ul>
+  <div class="nav-actions">
+      <button id="themeToggle" class="theme-toggle" aria-label="Switch theme">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun"  viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="contact.html#book-call" class="nav-cta-ghost">Talk to us</a>
+    <a href="contact.html" class="nav-cta">Start a project</a>
+  </div>
+    <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+</div>
+  </nav>
+
+<!-- PAGE HEADER -->
+<header id="page-header" class="ripstop">
+  <div class="header-glow"></div>
+  <div class="header-content">
+    <div class="header-meta fade-up">
+      <span class="label label-dot">Scope</span>
+    </div>
+    <h1 class="page-title fade-up">
+      Three tracks.<br>
+      <span class="aw">Modular by design.</span>
+    </h1>
+    <p class="page-sub fade-up">
+      You can enter at any stage and exit when the job is done. Each track is scoped and quoted before work starts — so you always know what you're committing to.
+    </p>
+    <div class="header-note fade-up">
+      <span>Enter at any stage.</span>
+      <strong>Scope agreed before work begins.</strong>
+    </div>
+  </div>
+</header>
+
+<!-- JOURNEY DIAGRAM -->
+<section id="journey">
+  <div class="journey-inner">
+    <div class="journey-label fade-up">
+      <div class="label label-dot" style="margin-bottom:14px">How it works</div>
+      <h2>Pick up wherever you are</h2>
+      <p>You can engage at any stage. We scope to where you actually are, not where the process starts.</p>
+    </div>
+
+    <div class="journey-track fade-up">
+      <div class="phase-dot t1">
+        <div class="phase-dot-circle">01</div>
+        <div class="phase-dot-label">Research &amp; brief</div>
+      </div>
+      <div class="phase-dot t1">
+        <div class="phase-dot-circle">02</div>
+        <div class="phase-dot-label">Tech pack</div>
+      </div>
+      <div class="phase-dot t2">
+        <div class="phase-dot-circle">03</div>
+        <div class="phase-dot-label">Concept development</div>
+      </div>
+      <div class="phase-dot t2">
+        <div class="phase-dot-circle">04</div>
+        <div class="phase-dot-label">Sampling</div>
+      </div>
+      <div class="phase-dot t2">
+        <div class="phase-dot-circle">05</div>
+        <div class="phase-dot-label">Development &amp; refinement</div>
+      </div>
+      <div class="phase-dot prod">
+        <div class="phase-dot-circle">06</div>
+        <div class="phase-dot-label">Production</div>
+      </div>
+      <div class="phase-dot prod">
+        <div class="phase-dot-circle">07</div>
+        <div class="phase-dot-label">QC &amp; delivery</div>
+      </div>
+    </div>
+
+    <div class="tier-brackets fade-up">
+      <div class="bracket bracket-t1">Track 1</div>
+      <div class="bracket bracket-t2">Track 2</div>
+      <div class="bracket bracket-prod">Track 3 — bespoke</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section id="pricing-cards">
+  <div class="cards-inner">
+
+    <!-- TRACK 1 -->
+    <div class="pricing-card fade-up">
+      <div class="card-left">
+        <div>
+          <div class="card-tier">Track 1</div>
+          <div class="card-title">Brief, tech pack &amp; factory introduction</div>
+        </div>
+        <div class="card-price-block">
+          <div class="price-from-label">Starting scope</div>
+          <div class="price-figure" style="font-size:17px;letter-spacing:0">Brief · Tech pack · Factory intro</div>
+        </div>
+      </div>
+      <div class="card-middle">
+        <div class="card-outcome">
+          <div class="outcome-label">What you leave with</div>
+          <div class="outcome-text">A production-ready tech pack, confirmed material and hardware specification, and a warm introduction to the right factory for your product. Everything a manufacturer needs to quote and build from.</div>
+        </div>
+        <div>
+          <div class="card-includes-label">Scope includes</div>
+          <ul class="card-includes">
+            <li>Initial research and market reference review</li>
+            <li>Product brief development and scope definition</li>
+            <li>Construction drawings and sewing specifications</li>
+            <li>Material specification and sourcing recommendation</li>
+            <li>Hardware specification (zips, buckles, fastenings)</li>
+            <li>Labelling and finishing specification</li>
+            <li>Factory introduction from our qualified network</li>
+            <li class="not-included">Concept generation and design direction</li>
+            <li class="not-included">Sampling and prototype management</li>
+            <li class="not-included">Production and QC management</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-right">
+        <a href="contact.html" class="card-cta card-cta-primary">Get a quote</a>
+        <a href="contact.html#book-call" class="card-cta card-cta-ghost">Ask a question</a>
+        <div class="card-cta-note">Scoped per project.<br>No hidden costs.</div>
+      </div>
+    </div>
+
+    <!-- TRACK 2 -->
+    <div class="pricing-card fade-up">
+      <div class="card-left">
+        <div>
+          <div class="card-tier">Track 2</div>
+          <div class="card-title">Full design &amp; development programme</div>
+        </div>
+        <div class="card-price-block">
+          <div class="price-from-label">Full programme</div>
+          <div class="price-figure" style="font-size:17px;letter-spacing:0">Design · Development · Pre-production sign-off</div>
+        </div>
+      </div>
+      <div class="card-middle">
+        <div class="card-outcome">
+          <div class="outcome-label">What you leave with</div>
+          <div class="outcome-text">An approved pre-production sample, signed off and ready to manufacture. Full design history, tech pack, material spec, and a factory that knows your product inside out.</div>
+        </div>
+        <div>
+          <div class="card-includes-label">Everything in Track 1, plus</div>
+          <ul class="card-includes">
+            <li>Concept generation — typically 2–3 design directions</li>
+            <li>Direction review and rationale</li>
+            <li>Pattern development</li>
+            <li>First sample coordination and feedback management</li>
+            <li>Development iterations (typically 2–4 sample rounds)</li>
+            <li>Pre-production sample review and sign-off</li>
+            <li class="not-included">Production floor management and inline QC</li>
+            <li class="not-included">AQL end-of-line inspection</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-right">
+        <a href="contact.html" class="card-cta card-cta-primary">Get a quote</a>
+        <a href="contact.html#book-call" class="card-cta card-cta-ghost">Ask a question</a>
+        <div class="card-cta-note">Staged payments.<br>Tied to milestones.</div>
+      </div>
+    </div>
+
+    <!-- TRACK 3 — BESPOKE -->
+    <div class="pricing-card bespoke fade-up">
+      <div class="card-left">
+        <div>
+          <div class="card-tier">Track 3</div>
+          <div class="card-title">Production management &amp; QC</div>
+        </div>
+        <div class="card-price-block">
+          <div class="price-bespoke">Scoped per project</div>
+          <div class="price-bespoke-note">Volume, factory location, and QC approach all shape the scope. We quote after a short conversation — accurate numbers only.</div>
+        </div>
+      </div>
+      <div class="card-middle">
+        <div class="card-outcome">
+          <div class="outcome-label">What this covers</div>
+          <div class="outcome-text">Once you have an approved sample and production-ready tech pack, this is the service that gets it manufactured correctly. We manage the factory relationship, oversee production, and make sure what ships matches what was signed off.</div>
+        </div>
+        <div>
+          <div class="card-includes-label">Scope can include any combination of</div>
+          <ul class="card-includes">
+            <li>Factory sourcing and qualification (if not already established)</li>
+            <li>PO placement and production scheduling</li>
+            <li>Raw material inspection</li>
+            <li>Inline QC at key production milestones</li>
+            <li>On-floor factory management during production runs</li>
+            <li>External QC partner sourcing and management</li>
+            <li>AQL 2.5 end-of-line inspection</li>
+            <li>Defect reporting, remediation management, and re-inspection</li>
+            <li>Shipping documentation and coordination</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-right">
+        <div>
+          <p style="font-size:14px;color:var(--text-2);line-height:1.7;margin-bottom:20px">
+            Volume, factory location, and QC approach all affect the cost significantly. A short conversation gets you an accurate number.
+          </p>
+          <a href="contact.html" class="card-cta card-cta-primary" style="display:inline-block;width:auto;padding:12px 28px">Request a quote</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section id="addons">
+  <div class="addons-inner">
+    <div class="addons-header fade-up">
+      <h3>Standalone services</h3>
+      <p>Not every engagement needs the full programme. These are available independently.</p>
+    </div>
+    <div class="addons-row fade-up">
+      <div class="addon-item">
+        <div class="addon-label">Tech pack only</div>
+        
+        <div class="addon-desc">Production-ready spec from your existing design files. No concept work or sampling.</div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-label">QC inspection only</div>
+        
+        <div class="addon-desc">AQL 2.5 end-of-line inspection on an existing production run. Report and defect log included. Travel and accommodation charged separately where required.</div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-label">Factory audit</div>
+        
+        <div class="addon-desc">Capability assessment of a factory you've identified. Site visit, written report, and capability summary. Travel charged separately.</div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-label">Ongoing retainer</div>
+        
+        <div class="addon-desc">Retained development and supply chain support for brands with active production pipelines.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- PAYMENT NOTE -->
+<div id="payment-note">
+  <div class="payment-note-inner fade-up">
+    <div class="pnote-icon">💳</div>
+    <div class="pnote-body">
+      <strong>Staged payments, tied to milestones.</strong>
+      All projects are invoiced in stages tied to milestones. The exact structure is agreed in your quote before any work begins. We never mark up factory or sampling costs — those pass through at cost.
+    </div>
+  </div>
+</div>
+
+<!-- EXCLUSIONS -->
+<section id="exclusions">
+  <div class="exclusions-inner">
+    <div class="excl-box fade-up">
+      <div class="excl-left">
+        <h3>What's not included</h3>
+        <p>Everything below sits outside our project fees and is charged separately or passed through at cost. We flag all of these during scoping so there are no surprises mid-project.</p>
+      </div>
+      <div class="excl-items">
+        <div class="excl-item">
+          <div class="excl-icon">✈️</div>
+          <div>
+            <div class="excl-name">Domestic and international travel</div>
+            <div class="excl-note">Factory visits, sample reviews, and overseas inspections are charged at cost. We agree whether travel is necessary before booking anything.</div>
+          </div>
+        </div>
+        <div class="excl-item">
+          <div class="excl-icon">🧵</div>
+          <div>
+            <div class="excl-name">Sampling and prototype costs</div>
+            <div class="excl-note">Factory sample charges are passed through at cost. Agreed and confirmed before each sample is placed — no surprises mid-project.</div>
+          </div>
+        </div>
+        <div class="excl-item">
+          <div class="excl-icon">🏭</div>
+          <div>
+            <div class="excl-name">Production costs (FOB)</div>
+            <div class="excl-note">Factory production costs are invoiced directly to you. We never mark up production. Our fee covers management — that's always clearly separated in your quote.</div>
+          </div>
+        </div>
+        <div class="excl-item">
+          <div class="excl-icon">🚢</div>
+          <div>
+            <div class="excl-name">Freight, duties and import costs</div>
+            <div class="excl-note">Shipping, customs clearance, and import duties sit with you. We can recommend freight partners and support documentation — but these costs are outside our scope.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="faq-header fade-up">
+      <div class="label label-dot" style="margin-bottom:14px">Common questions</div>
+      <h2>Things people usually ask first</h2>
+      <p>If yours isn't here, ask it on a call.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do I need a minimum order quantity to work with you?</div>
+      <div class="faq-a">No minimum. We work with brands placing their first 300-unit run and established ranges doing 10,000+ units. What matters is that the project is clearly scoped and the economics make sense. We'll tell you honestly if we don't think they do.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I do Track 1 now and add production management later?</div>
+      <div class="faq-a">Yes. The tracks are designed to be modular. Some brands start with a tech pack and factory intro, take those materials and manage production themselves, then come back to us for QC on the first run. Others do the full journey end to end. Either way works.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why is production management bespoke rather than fixed price?</div>
+      <div class="faq-a">Because the variables are too significant to quote blind. A single product run at a nearby Vietnam factory is a different scope to managing three products across two factories in China with inline visits and external QC. Quoting a fixed price for that would either mean we're overcharging you or working for too little — neither is good. We'd rather have a quick conversation and give you an accurate number.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if the number of sample rounds goes over what was agreed?</div>
+      <div class="faq-a">Each sample round has a defined purpose and test list. If a product is genuinely complex and requires additional rounds beyond what was scoped, we'll discuss it before proceeding. Any change to scope is agreed in writing before we commit to it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you mark up factory or sampling costs?</div>
+      <div class="faq-a">No. Factory production and sample costs are passed through at the actual rate. You see the factory invoice. Our fee is separate and clearly itemised. That transparency is deliberate — it means you can always verify what you're paying for.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">I already have a tech pack. Can I just come in for production management?</div>
+      <div class="faq-a">Yes. If you have production-ready tech packs and an approved pre-production sample, we can pick up from there. We'll review your existing documentation before quoting to make sure there are no gaps that would cause problems on the factory floor.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="pricing-cta">
+  <div class="cta-box fade-up">
+    <div class="cta-text">
+      <h2>Worth a conversation before you decide.</h2>
+      <p>The scope adjusts, not the quality. Tell us what you're building and where you are — we'll tell you straight whether it's a fit.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="contact.html#book-call" class="btn btn-primary">Have a conversation first</a>
+      <a href="contact.html" class="btn btn-ghost">Start a project</a>
+    </div>
+  </div>
+</section>
+
+  <footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122 33" fill="currentColor" aria-label="stitch." role="img" style="display:block"><path d="M4.21213 32.279C2.45096 31.7967 1.05181 31.1927 0 30.457L2.04002 26.4331C3.06247 27.1103 4.28551 27.6559 5.7189 28.0651C7.1523 28.4743 8.56123 28.6789 9.9506 28.6789C13.1256 28.6789 14.7155 27.8459 14.7155 26.1798C14.7155 25.3906 14.3095 24.8401 13.5023 24.5283C12.6951 24.2166 11.3987 23.9194 9.60815 23.6369C7.73446 23.3543 6.21301 23.0279 5.034 22.6625C3.855 22.2972 2.83744 21.6541 1.97153 20.7334C1.10562 19.8175 0.675114 18.5363 0.675114 16.8995C0.675114 14.756 1.57527 13.0363 3.37557 11.7551C5.17588 10.469 7.60727 9.82596 10.6697 9.82596C12.2303 9.82596 13.7909 10.0013 15.3466 10.357C16.9072 10.7126 18.1841 11.1851 19.1772 11.7746L17.1371 15.7985C15.2096 14.6683 13.0375 14.1032 10.6306 14.1032C9.07001 14.1032 7.88612 14.337 7.07892 14.8047C6.27171 15.2724 5.86567 15.8862 5.86567 16.6462C5.86567 17.4938 6.29617 18.093 7.16208 18.4486C8.02799 18.8043 9.36843 19.1355 11.1834 19.4424C12.9984 19.725 14.4856 20.0514 15.6499 20.4167C16.8143 20.7821 17.8123 21.4057 18.6488 22.2826C19.4854 23.1594 19.9061 24.4017 19.9061 26.0093C19.9061 28.1284 18.9864 29.8237 17.142 31.0904C15.2977 32.3618 12.788 32.9951 9.61304 32.9951C7.76871 32.9951 5.9684 32.7564 4.21213 32.2741V32.279Z" fill="currentColor"/><path d="M36.6714 31.4752C36.0452 31.9819 35.2869 32.3667 34.3966 32.62C33.5062 32.8734 32.562 33 31.5689 33C29.0739 33 27.1464 32.3521 25.7815 31.0514C24.4215 29.7507 23.7415 27.8605 23.7415 25.376V14.4881H19.999V10.2498H23.7415V5.08105H29.0593V10.2498H35.1402V14.4881H29.0593V25.2493C29.0593 26.3503 29.3283 27.1931 29.8665 27.7679C30.4046 28.3477 31.1873 28.6351 32.2049 28.6351C33.3937 28.6351 34.3868 28.3233 35.1842 27.7046L36.6714 31.4752Z" fill="currentColor"/><path d="M39.817 5.44154C39.1664 4.8326 38.8386 4.0775 38.8386 3.17626C38.8386 2.27502 39.1664 1.51993 39.817 0.910983C40.4677 0.302037 41.2798 0 42.2435 0C43.2073 0 44.0145 0.292294 44.67 0.867139C45.3207 1.44686 45.6485 2.17272 45.6485 3.0496C45.6485 3.98007 45.3305 4.76439 44.6896 5.40257C44.0536 6.03587 43.2366 6.3574 42.2435 6.3574C41.2504 6.3574 40.4726 6.05536 39.817 5.44641V5.44154ZM39.5627 10.0841H44.8804V32.7028H39.5627V10.0841Z" fill="currentColor"/><path d="M64.0233 31.4752C63.3971 31.9819 62.6389 32.3667 61.7485 32.62C60.8532 32.8734 59.9139 33 58.9208 33C56.4259 33 54.4984 32.3521 53.1335 31.0514C51.7734 29.7507 51.0934 27.8605 51.0934 25.376V14.4881H47.351V10.2498H51.0934V5.08105H56.4112V10.2498H62.4921V14.4881H56.4112V25.2493C56.4112 26.3503 56.6802 27.1931 57.2184 27.7679C57.7565 28.3477 58.5393 28.6351 59.5568 28.6351C60.7456 28.6351 61.7387 28.3233 62.5361 27.7046L64.0233 31.4752Z" fill="currentColor"/><path d="M70.2314 31.5142C68.3578 30.5252 66.8999 29.1514 65.8481 27.3831C64.8012 25.6196 64.2728 23.6222 64.2728 21.391C64.2728 19.1599 64.7963 17.1674 65.8481 15.4185C66.895 13.6696 68.3529 12.3007 70.207 11.3118C72.066 10.3228 74.1843 9.83081 76.5668 9.83081C78.8073 9.83081 80.7691 10.2839 82.4569 11.1851C84.1447 12.0912 85.4117 13.3871 86.263 15.0824L82.178 17.4548C81.5274 16.4123 80.7104 15.628 79.732 15.1018C78.7535 14.5806 77.6822 14.3175 76.5227 14.3175C74.5365 14.3175 72.8928 14.9606 71.5866 16.2467C70.2804 17.5328 69.6297 19.2476 69.6297 21.3959C69.6297 23.5443 70.2755 25.2591 71.567 26.5403C72.8585 27.8264 74.5072 28.4694 76.5227 28.4694C77.6871 28.4694 78.7535 28.2064 79.732 27.6851C80.7104 27.1639 81.5274 26.3795 82.178 25.3321L86.263 27.7046C85.3824 29.3999 84.1006 30.7055 82.4129 31.6213C80.7251 32.5372 78.778 33 76.5619 33C74.2087 33 72.0953 32.508 70.2217 31.519L70.2314 31.5142Z" fill="currentColor"/><path d="M108.943 12.3251C110.675 13.9911 111.536 16.461 111.536 19.7396V32.7028H106.218V20.4167C106.218 18.4389 105.748 16.9482 104.814 15.9495C103.88 14.946 102.544 14.4442 100.817 14.4442C98.8602 14.4442 97.3143 15.0288 96.1793 16.2028C95.0444 17.3769 94.4769 19.0625 94.4769 21.2644V32.7028H89.1591V1.27148H94.4769V12.7099C95.3574 11.7795 96.4386 11.0633 97.7301 10.5713C99.0217 10.0793 100.46 9.83083 102.05 9.83083C104.912 9.83083 107.211 10.6639 108.943 12.3299V12.3251Z" fill="currentColor"/><path d="M116.046 32.0013C115.366 31.3388 115.024 30.496 115.024 29.4827C115.024 28.4694 115.356 27.5926 116.022 26.9398C116.687 26.2918 117.519 25.9655 118.512 25.9655C119.505 25.9655 120.332 26.2918 121.002 26.9398C121.667 27.5877 122 28.4353 122 29.4827C122 30.5301 121.658 31.3388 120.978 32.0013C120.298 32.6639 119.476 32.9951 118.512 32.9951C117.548 32.9951 116.726 32.6639 116.046 32.0013Z" fill="currentColor"/></svg></a>
+      <p class="footer-tagline">Design, development, and manufacturing for bag and accessories brands. From concept through to production, with a team based across the UK and Southeast Asia.</p>
+    </div>
+    <nav class="footer-nav">
+      <div class="footer-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="work.html">All projects</a></li>
+          <li><a href="journal.html">Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="pricing.html">Scope</a></li>          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="contact.html">Start a project</a></li>
+          <li><a href="mailto:hello@stitchcreative.co.uk">hello@stitchcreative.co.uk</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 stitch. All rights reserved.</span>
+    <div class="footer-legal" style="display:flex;gap:16px">
+      <a href="privacy-policy.html" style="font-size:12px;color:var(--text-3);transition:color .2s">Privacy Policy</a>
+      <a href="terms.html" style="font-size:12px;color:var(--text-3);transition:color .2s">Terms</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/company/stitch-creative/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://instagram.com/stitchcreative" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const glow=document.getElementById('cursorGlow');
+  document.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'},{passive:true});
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+  const burger = document.getElementById('navBurger');
+  if (burger) { burger.addEventListener('click', () => { nav.classList.toggle('nav-open'); burger.classList.toggle('open'); }); }
+  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.07});
+  document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click',()=>{
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  document.querySelectorAll('.btn-primary').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+      const r=btn.getBoundingClientRect();
+      const x=(e.clientX-r.left-r.width/2)*0.15;
+      const y=(e.clientY-r.top-r.height/2)*0.15;
+      btn.style.transform=`translate(${x}px,${y}px) translateY(-2px)`;
+    });
+    btn.addEventListener('mouseleave',()=>{btn.style.transform=''});
+  });
+
+    /* ── Theme toggle ─────────────────────────────────────── */
+    (function(){
+      var html=document.documentElement,btn=document.getElementById('themeToggle');
+      var saved=localStorage.getItem('stitch-theme');
+      var dark=window.matchMedia('(prefers-color-scheme:dark)').matches;
+      if(saved==='dark')html.setAttribute('data-theme','dark');
+      if(btn)btn.addEventListener('click',function(){
+        var isLight=html.getAttribute('data-theme')==='light';if(isLight){html.removeAttribute('data-theme');localStorage.setItem('stitch-theme','dark');}else{html.setAttribute('data-theme','light');localStorage.setItem('stitch-theme','light');}
+      });
+    })();
+  </script>
+</body>
+</html>

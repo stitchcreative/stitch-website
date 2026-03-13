@@ -1,0 +1,166 @@
+================================================================================
+WIDTH/PADDING AUDIT - QUICK REFERENCE TABLE
+================================================================================
+
+SUMMARY
+───────────────────────────────────────────────────────────────────────────────
+Total Files Scanned:           50
+Files with Issues:             8 (all case study pages)
+Total Issues Found:            11 instances
+Issue Type:                    Double horizontal padding on .container
+Impact:                        Content width reduced from 1120px to 960px (-14%)
+
+DESIGN TOKENS
+───────────────────────────────────────────────────────────────────────────────
+--max-w:    1280px
+--pad-x:    clamp(20px, 5vw, 80px)
+            = 80px max on desktop
+
+Standard .container CSS:
+  max-width: var(--max-w);           /* 1280px */
+  margin: 0 auto;
+  padding: 0 var(--pad-x);           /* Horizontal padding only */
+
+Expected content width: 1120px (desktop)
+
+
+THE PROBLEM
+───────────────────────────────────────────────────────────────────────────────
+.container has CSS:            padding: 0 var(--pad-x)
+Some instances have inline:    style="padding:80px var(--pad-x)"
+
+Result: Double horizontal padding (var(--pad-x) × 2 = 160px per side)
+Content width becomes: 960px instead of 1120px
+
+
+AFFECTED FILES (8 Case Study Pages)
+───────────────────────────────────────────────────────────────────────────────
+File                                    Lines    Issue Count
+─────────────────────────────────────────────────────────────────────────────
+case-study-dvrge.html                   ~842     1
+case-study-m24.html                     ~807     1
+case-study-mous-18l.html                ~913,944 2
+case-study-mous-tech-pouch.html         ~825,840 2
+case-study-mous-zip.html                ~827,842 2
+case-study-reika-camera.html            ~829     1
+case-study-reika-rolltop.html           ~837     1
+case-study-reika-travel.html            ~871     1
+                                                  ────
+                                        TOTAL:   11
+
+
+THE FIX
+───────────────────────────────────────────────────────────────────────────────
+CHANGE:  <div class="container" style="padding:80px var(--pad-x)">
+TO:      <div class="container" style="padding:80px 0">
+
+This:
+  ✓ Preserves 80px vertical padding
+  ✓ Removes duplicate horizontal padding
+  ✓ Results in consistent 1120px width
+  ✓ Aligns with all other pages
+  ✓ Requires only HTML changes (no CSS updates)
+
+
+PAGES WITH CORRECT PATTERNS (42 files - NO CHANGES NEEDED)
+───────────────────────────────────────────────────────────────────────────────
+
+CORE PAGES (8):
+  • index.html
+  • about.html
+  • contact.html
+  • pricing.html
+  • process.html
+  • services.html
+  • work.html
+  • 404.html
+
+PRODUCT PAGES (3):
+  • dvrge.html
+  • m-24.html
+  • reika-roll-top.html
+
+JOURNAL PAGES (27):
+  • journal.html
+  • journal-18-month-development.html
+  • journal-2026-trends.html
+  • journal-best-bag-factories.html
+  • journal-better-terms.html
+  • journal-bluesign.html
+  • journal-china-vietnam-indonesia.html
+  • journal-evaluate-factory.html
+  • journal-factory-relationship.html
+  • journal-fob-exw-cif-ddp.html
+  • journal-harness-system.html
+  • journal-how-to-design-bag.html
+  • journal-import-duties.html
+  • journal-lead-times.html
+  • journal-meeting-supplier.html
+  • journal-moq-negotiation.html
+  • journal-pattern-pieces.html
+  • journal-payment-terms.html
+  • journal-post-template.html
+  • journal-qc-inspection.html
+  • journal-supplier-certifications.html
+  • journal-supplier-code-of-conduct.html
+  • journal-tech-packs.html
+  • journal-vietnam-gsp.html
+  • journal-xpac.html
+  • journal-ykk-sbs-riri.html
+  • journal-ykk-worth-4x.html
+
+LEGAL PAGES (2):
+  • terms.html
+  • privacy-policy.html
+
+CASE STUDIES WITHOUT ISSUES (1):
+  • case-study-mous-25l.html
+
+
+EFFECTIVE WIDTH COMPARISON
+───────────────────────────────────────────────────────────────────────────────
+
+CORRECT PATTERN (Most pages):
+  Layout: .container (padding: 0 var(--pad-x))
+  Max width: 1280px
+  Horizontal padding: 80px × 2 = 160px
+  Effective content width: 1120px
+  ✓ CONSISTENT
+
+DOUBLE-PADDING PATTERN (8 case studies):
+  Layout: .container with inline style="padding:80px var(--pad-x)"
+  Max width: 1280px
+  Horizontal padding: 80px × 2 × 2 = 320px (160px per side)
+  Effective content width: 960px
+  ✗ INCONSISTENT (14% narrower)
+
+
+IMPACT ON DIFFERENT VIEWPORT SIZES
+───────────────────────────────────────────────────────────────────────────────
+
+DESKTOP (1280px+ viewport):
+  Correct pattern:       1120px content width
+  Double-padding issue:  960px content width
+  Difference:            -160px (-14%)
+
+TABLET (768px viewport):
+  --pad-x clamps to: clamp(20px, 5vw, 80px) = 38.4px (5vw)
+  Correct pattern:       692px content width
+  Double-padding issue:   615px content width
+  Difference:            -77px (-11%)
+
+MOBILE (375px viewport):
+  --pad-x clamps to: clamp(20px, 5vw, 80px) = 20px
+  Correct pattern:       335px content width
+  Double-padding issue:   295px content width
+  Difference:            -40px (-12%)
+
+
+VERIFICATION
+───────────────────────────────────────────────────────────────────────────────
+Audit script: audit_final_report.py
+Full report:  AUDIT_REPORT.md
+Scan date:    March 12, 2026
+Methodology:  CSS extraction + HTML regex pattern matching + manual verification
+
+================================================================================
