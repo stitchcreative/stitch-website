@@ -901,7 +901,7 @@ html[data-theme="dark"] .drop-link-tag--new {
       <div class="cs-tags"><span class="cs-tag">Design</span><span class="cs-tag">Development</span></div>
       <div class="cs-client">Mous</div>
       <h1 class="cs-title">Extreme Commuter<br><span class="aw">Tech Pouch</span></h1>
-      <p class="cs-tagline">A tech pouch designed for the bag it lives in. Sized to slot into the Extreme Commuter. Organised enough to leave the bag behind.</p>
+      <p class="cs-tagline">A two-in-one tech pouch and sling with a removable strap, magnetic divider fence, and rigid EVA foam structure. Designed to protect your tech in true Mous fashion.</p>
       <div class="cs-actions fade-up" style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
         <a href="https://row.mous.co/products/extreme-commuter-tech-pouch" target="_blank" rel="noopener" class="btn btn-primary">
           View on Mous
@@ -932,9 +932,9 @@ html[data-theme="dark"] .drop-link-tag--new {
     <div class="cs-section-inner">
       <div class="cs-section-label"><h2>Challenge</h2><div class="step-num">01</div></div>
       <div class="cs-section-body">
-        <h3>Building a pouch that earns its place inside an already-organised bag</h3>
-        <p>The Extreme Commuter 25L has seventeen pockets. The brief for the tech pouch wasn't to add more storage, it was to make one focused, self-contained carry for the cable-and-charger category. Something you can pull out of the bag and take to a meeting, a coffee shop, or a hotel room without bringing the whole bag.</p>
-        <p>The real challenge was restraint. Pouches tend to either be so minimal they're impractical, or so feature-heavy they become an accessory bag in their own right. This one needed to hold a charging brick, two cables, earbuds, and a few peripherals without becoming a small luggage bag.</p>
+        <h3>Building a pouch that works as two products in one</h3>
+        <p>Mous wanted something that worked both as a standalone sling and as a tech organiser you can drop into the Extreme Commuter. Not a pouch that clips onto a bag. A product that functions independently with its own removable strap, then slots into the backpack when you need it to.</p>
+        <p>The challenge was making that dual identity feel seamless. Most pouches that try to do two things end up doing neither well. This one needed rigid structure for protection, proper organisation for tech, and a clean sling profile that doesn't look like an afterthought.</p>
       </div>
     </div>
   </section>
@@ -944,11 +944,12 @@ html[data-theme="dark"] .drop-link-tag--new {
       <div class="cs-section-body">
         <h3>What good looked like for the tech pouch</h3>
         <ul class="goals-list">
-          <li>Fit cleanly inside the Extreme Commuter 25L without stealing usable volume</li>
-          <li>Carry a charging brick, two cables, earbuds, a USB hub, and a few cards, nothing more</li>
-          <li>Open flat enough to see everything at a glance without unpacking it</li>
-          <li>Standalone function, usable completely independently of the backpack</li>
-          <li>Match the Extreme Commuter's material and hardware spec visually</li>
+          <li>Function as both a standalone sling and a tech organiser that drops into the Extreme Commuter</li>
+          <li>Rigid EVA foam structure to protect devices and tech in transit</li>
+          <li>Magnetic divider fence that stays out of the way when not needed</li>
+          <li>Removable strap for sling carry, clean attachment when worn independently</li>
+          <li>Plenty of internal pockets for cables, chargers, earbuds, and peripherals</li>
+          <li>Match the Extreme Commuter's material and hardware language visually</li>
         </ul>
       </div>
     </div>
@@ -957,10 +958,10 @@ html[data-theme="dark"] .drop-link-tag--new {
     <div class="cs-section-inner">
       <div class="cs-section-label"><h2>Design</h2><div class="step-num">03</div></div>
       <div class="cs-section-body">
-        <h3>Designed flat-open first, everything else follows from that</h3>
-        <p>We started the design by thinking about how you use a pouch in practice. You don't unzip it and dig around. You open it flat, see everything, grab what you need, close it. That user behaviour defined the architecture: a clamshell opening that lays the pouch completely flat, with everything visible.</p>
-        <p>The internal layout came from an inventory of what the target user actually carries. Not a generic list, a specific one. Charging brick (pocket sized for a 65W GaN charger). Two cable slots (USB-C to USB-C, USB-C to Lightning). A mesh pouch for earbuds. A flat pocket for a USB hub or external SSD. Card slots for SD cards, SIM cards.</p>
-        <blockquote style="padding:20px;border-left:2px solid var(--accent);margin:32px 0;color:var(--text-2);font-size:15px">A well-organised pouch is one you never have to think about. Everything has a home and you know where that home is.</blockquote>
+        <h3>Two modes, one product</h3>
+        <p>The design started with the dual-use requirement. As a sling, it needs to sit comfortably against the body with a clean profile. As a pouch inside the backpack, it needs to organise tech without adding bulk. Those two modes drove every decision.</p>
+        <p>Inside, a divider fence held in place by a magnet creates separate zones for devices and cables. When you don't need the divider, it folds flat against the interior and stays put. The internal pockets are sized around what the target user actually carries: charging brick, cables, earbuds, USB hub, cards. Everything has a home.</p>
+        <p>The removable strap clips on and off cleanly. When attached, the pouch becomes a proper sling. When removed, it drops into the Extreme Commuter without any dangling hardware.</p>
       </div>
     </div>
   </section>
@@ -969,19 +970,19 @@ html[data-theme="dark"] .drop-link-tag--new {
     <div class="cs-section-inner">
       <div class="cs-section-label"><h2>Engineering</h2><div class="step-num">04</div></div>
       <div class="cs-section-body">
-        <h3>Getting the open-flat geometry right and keeping it flat</h3>
+        <h3>Rigid structure that protects, not just organises</h3>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:24px;margin:28px 0">
           <div style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px">Technical specification</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:14px;line-height:1.7">
             <div><strong style="color:var(--text)">Shell fabric:</strong> 840D Carbonated Nylon (outer) / 210D Nylon (interior)</div>
-            <div><strong style="color:var(--text)">Interior liner:</strong> Contrast colour</div>
-            <div><strong style="color:var(--text)">Hardware:</strong> YKK zips throughout</div>
-            <div><strong style="color:var(--text)">Dimensions (closed):</strong> approx. 22cm x 14cm x 5cm</div>
-            <div><strong style="color:var(--text)">Weight (empty):</strong> ~130g</div>
+            <div><strong style="color:var(--text)">Structure:</strong> EVA foam panelling throughout</div>
+            <div><strong style="color:var(--text)">Divider:</strong> Magnetic fence system</div>
+            <div><strong style="color:var(--text)">Hardware:</strong> YKK zips, removable strap clips</div>
+            <div><strong style="color:var(--text)">Carry modes:</strong> Sling (with strap) / Pouch (without)</div>
           </div>
         </div>
-        <p>The clamshell opening requires a precisely positioned zip track and a thin but structured divider panel. Too much rigidity and the pouch won't flatten properly. Too little and it closes on itself when set down open. We tested four panel weights and two zip track positions before locking the specification.</p>
-        <p>The cable organisation slots are elasticated, not fixed pockets. Fixed pockets impose a cable width. Elastic slots accommodate everything from USB-C braided cables to older, bulkier cables without the pouch looking empty.</p>
+        <p>The EVA foam panelling gives the pouch a rigid structure that holds its shape and protects tech inside. This is a Mous product, so protection isn't optional. The foam weight had to balance rigidity with wearability as a sling.</p>
+        <p>The magnetic divider fence was one of the more involved details. It needed to hold firm enough to create a genuine partition between devices, but release easily and fold flat against the interior when not in use. The magnet placement went through several iterations to get the hold strength right.</p>
       </div>
     </div>
   </section>
@@ -1008,9 +1009,9 @@ html[data-theme="dark"] .drop-link-tag--new {
     <div class="cs-section-inner">
       <div class="cs-section-label"><h2>Production</h2><div class="step-num">06</div></div>
       <div class="cs-section-body">
-        <h3>Simple construction, precise organisation</h3>
-        <p>The tech pouch is simpler to manufacture than the backpacks in the Extreme Commuter range, but the tolerance requirements on the interior organisation are tight. Pocket placement that's 5mm out of position creates a pouch where cables don't sit properly and the clamshell doesn't close flat.</p>
-        <p>The production line was at the same partner facilities as the backpacks, across Indonesia. The team already understood the YKK zip standards and the inspection process. QC focus: zip function, interior pocket alignment, clamshell lay-flat.</p>
+        <h3>Compact build, tight tolerances</h3>
+        <p>The tech pouch is a smaller product than the backpacks in the Extreme Commuter range, but the EVA foam panelling, magnetic divider, and strap attachment points add manufacturing complexity. Pocket placement tolerances are tight. The magnet positioning has to be precise enough that the divider fence holds cleanly and releases consistently.</p>
+        <p>Production ran at the same partner facilities as the backpacks, across Indonesia. The team already understood the YKK zip standards and the inspection process. QC focus: zip function, strap clip attachment, magnet alignment, EVA bonding, and internal pocket placement.</p>
       </div>
     </div>
   </section>
@@ -1047,8 +1048,8 @@ html[data-theme="dark"] .drop-link-tag--new {
           <div><div style="font-size:24px;font-weight:700;color:var(--accent);font-family:'Space Grotesk',sans-serif;line-height:1.2;margin-bottom:6px">AQL 2.5</div><div style="font-size:12px;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em">Inspection standard</div></div>
         </div>
         <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:700;letter-spacing:-.025em;line-height:1.2;margin-bottom:20px">A small product that completes the range</h2>
-        <p style="font-size:16px;color:var(--text-2);line-height:1.8;">The tech pouch gave the Extreme Commuter range a logical companion, something to buy alongside the backpack, not instead of it. Accessories extend lifetime value without cannibalising the hero product.</p>
-        <p style="font-size:16px;color:var(--text-2);line-height:1.8;">Functionally, it works exactly as specified: flat-open, everything visible, takes under thirty seconds to locate anything inside it. Small products are easier to describe than to design well.</p>
+        <p style="font-size:16px;color:var(--text-2);line-height:1.8;">The tech pouch gave the Extreme Commuter range a logical companion that works as a product in its own right. As a sling, it carries independently. As a pouch, it slots into the backpack. Two use cases, one SKU, and a genuine reason to buy alongside the hero product.</p>
+        <p style="font-size:16px;color:var(--text-2);line-height:1.8;">The rigid EVA structure and magnetic divider fence give it the protection credentials Mous is known for, while the removable strap and clean internal organisation make it practical enough to use daily.</p>
       </div>
     </div>
   </section>
