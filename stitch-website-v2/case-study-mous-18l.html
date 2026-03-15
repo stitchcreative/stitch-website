@@ -533,6 +533,11 @@ blockquote.pull cite {
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}
   .footer-tagline{max-width:100%}
 }
+@media(max-width:480px){
+  .snapshot-grid{grid-template-columns:1fr}
+  .outcome-stats{grid-template-columns:1fr}
+  .breadcrumb{padding-top:70px}
+}
 /* ─── DARK MODE OVERRIDES ────────────────────────────────── */
     html[data-theme="dark"] {
   --bg:           #080808;

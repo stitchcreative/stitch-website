@@ -483,6 +483,12 @@
       .cred-inner{grid-template-columns:1fr 1fr}
       .cta-box{flex-direction:column}
     }
+    @media(max-width:540px){
+      .cred-inner{grid-template-columns:1fr}
+      .cta-box{padding:32px 24px}
+      .proj-card.featured .proj-img,.proj-card.featured .proj-img-placeholder{height:220px}
+      .proj-card.standard .proj-img,.proj-card.standard .proj-img-placeholder{height:180px}
+    }
 
     /* ─── DARK MODE OVERRIDES ────────────────────────────────── */
     html[data-theme="dark"] {

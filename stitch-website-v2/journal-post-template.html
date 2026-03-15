@@ -455,6 +455,13 @@ a {
 #backToTop:hover {
   border-color:var(--border-med);color:var(--text);transform:translateY(-2px)
 }
+@media(max-width:768px){
+  .more-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+}
+@media(max-width:480px){
+  .more-grid{grid-template-columns:1fr}
+  .post-body ul{margin-left:16px}
+}
 /* ─── DARK MODE OVERRIDES ────────────────────────────────── */
     html[data-theme="dark"] {
   --bg:           #080808;

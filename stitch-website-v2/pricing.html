@@ -286,6 +286,10 @@
       .footer-top{grid-template-columns:1fr;gap:40px}
     }
     @media(max-width:768px){
+      .card-includes li{gap:8px;font-size:12px}
+      .card-includes li::before{min-width:14px;height:14px}
+      .card-includes{gap:6px}
+      .card-middle{padding:32px 24px}
       .nav-links,.nav-actions{display:none}
       .nav-burger{display:flex !important}
 .nav-burger span{transition:transform .25s ease,opacity .25s ease;}
@@ -497,7 +501,14 @@
     .drop-divider{height:1px;background:var(--border);margin:4px 6px}
 
   
-    @media(max-width:640px){.hero-actions,.cta-actions,.soon-actions{flex-direction:column;align-items:stretch;gap:10px}.hero-actions .btn,.cta-actions .btn,.soon-actions .btn{width:100%;justify-content:center;text-align:center}}
+    @media(max-width:640px){
+      .card-includes li{gap:6px;font-size:11px}
+      .card-includes li::before{min-width:12px;height:12px}
+      .card-includes{gap:5px}
+      .card-middle{padding:24px 16px}
+      .hero-actions,.cta-actions,.soon-actions{flex-direction:column;align-items:stretch;gap:10px}
+      .hero-actions .btn,.cta-actions .btn,.soon-actions .btn{width:100%;justify-content:center;text-align:center}
+    }
     </style>
   <script>
     /* Prevent dark-mode FOUC */

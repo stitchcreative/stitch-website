@@ -273,7 +273,10 @@
       .cta-box{flex-direction:column}
       .phase-details{grid-template-columns:1fr}
     }
-  
+    @media(max-width:540px){
+      .cta-box{padding:32px 24px}
+    }
+
     /* ─── DARK MODE OVERRIDES ────────────────────────────────── */
     html[data-theme="dark"] {
       --bg:           #080808;
