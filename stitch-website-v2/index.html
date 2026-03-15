@@ -11,13 +11,13 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://stitchcreative.co.uk/">
-  <meta property="og:title" content="stitch. — Design Systems & Global Supply Chains">
+  <meta property="og:title" content="stitch. | Design Systems & Global Supply Chains">
   <meta property="og:description" content="stitch. designs and engineers premium bags from brief to bulk production. We partner with founders and brands who want a product that lasts.">
   <meta property="og:image" content="https://stitchcreative.co.uk/images/og-default.png">
   <meta property="og:site_name" content="stitch.">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="stitch. — Design Systems & Global Supply Chains">
+  <meta name="twitter:title" content="stitch. | Design Systems & Global Supply Chains">
   <meta name="twitter:description" content="stitch. designs and engineers premium bags from brief to bulk production. We partner with founders and brands who want a product that lasts.">
   <meta name="twitter:image" content="https://stitchcreative.co.uk/images/og-default.png">
   <!-- Canonical -->
@@ -25,7 +25,7 @@
   <!-- Apple Touch Icon -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 
-  <title>stitch. — Design Systems & Global Supply Chains</title>
+  <title>stitch. | Design Systems & Global Supply Chains</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -507,14 +507,18 @@
     /* factory selfie — keep visible on ultrawide */
     .factory-selfie-cell{min-width:130px;}
     @media(min-width:1600px){.factory-selfie-cell{flex:0.9;}}
-    /* hide on mobile */
+    /* reduce mosaic on tablet */
+    @media(max-width:768px) and (min-width:481px){
+      .mosaic-row-1,.mosaic-row-2{height:200px;}
+      .hide-mobile{display:none !important;}
+    }
+    /* reduce mosaic on mobile - show only 2 per row */
     @media(max-width:480px){
       .hide-mobile{display:none !important;}
       .factory-selfie-cell{display:none !important;}
-      .mosaic-row-1{height:210px;}
-      .mosaic-row-2{height:220px;}
+      .mosaic-row-2{display:none !important;}
+      .mosaic-row-1{height:180px;}
     }
-    @media(max-width:768px) and (min-width:481px){.mosaic-row-1,.mosaic-row-2{height:200px;}}
 
     /* ─── IMAGE STRIP ────────────────────────────────────── */
     .img-strip{width:100%;height:260px;overflow:hidden;}
@@ -590,7 +594,7 @@
     /* ─── TESTIMONIALS ───────────────────────────────────── */
     #testimonials{padding:100px 0;background:var(--bg-2);}
     .testi-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+      display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
       background:var(--border);border:1px solid var(--border);
       border-radius:12px;overflow:hidden;margin-top:64px;
     }
@@ -632,12 +636,15 @@
     .process-pill .sep{width:1px;height:12px;background:var(--border-med)}
 
     @media(max-width:768px){
-      .process-pill{padding:10px 16px;font-size:12px;gap:10px;}
-      .process-pill .sep{display:none;}
-      .process-pill span{display:block;width:100%;}
+      .process-pill{display:flex;flex-direction:column;align-items:stretch;padding:0;font-size:13px;gap:0;border-radius:12px;overflow:hidden;}
+      .process-pill .sep{display:none !important;}
+      .process-pill > span:not(.sep){display:flex;justify-content:space-between;align-items:center;width:100%;padding:14px 20px;border-bottom:1px solid var(--glass-border)}
+      .process-pill > span:not(.sep):last-child{border-bottom:none}
+      .process-pill strong{margin-left:auto;padding-left:16px;color:var(--text);font-size:14px}
     }
     @media(max-width:540px){
-      .process-pill{padding:8px 12px;font-size:11px;gap:8px;}
+      .process-pill > span:not(.sep){padding:12px 16px;font-size:12px}
+      .process-pill strong{font-size:13px}
     }
 
     .process-grid{
@@ -1227,7 +1234,7 @@
       </h1>
 
       <p class="hero-sub fade-up">
-        British team, based in Asia — working with factories to improve efficiency, quality and cost compared with the traditional remote model.
+        British team, based in Asia. We work with factories to improve efficiency, quality and cost compared with the traditional remote model.
       </p>
 
       <div class="hero-actions fade-up">
@@ -1451,8 +1458,8 @@
           <h2 class="sec-title">We become your team,<br>or we join it.</h2>
         </div>
         <p class="sec-sub">
-          Whether you're building from scratch or optimising an existing
-          supply chain — there's a model that fits where you are.
+          Building from scratch or optimising an existing
+          supply chain. There's a model that fits where you are.
         </p>
       </div>
 
@@ -1462,7 +1469,7 @@
           <div class="engage-pill"><span class="dot"></span>Startups &amp; emerging brands</div>
           <h3>You need a full product team.</h3>
           <p class="desc">
-            You have a product idea. We build everything around it — design, engineering,
+            You have a product idea. We build everything around it. Design, engineering,
             sourcing, sampling, production, QC. Brief to shipment.
           </p>
           <ul class="engage-list">
@@ -1479,7 +1486,7 @@
           <h3>You need to plug the execution gap.</h3>
           <p class="desc">
             You have a design team. What you're missing is the manufacturing layer that makes
-            their work viable at scale — factory access, sampling speed, and QC that holds.
+            their work viable at scale. Factory access, sampling speed, and QC that holds.
           </p>
           <ul class="engage-list">
             <li>Embedded development and production support</li>
@@ -1559,7 +1566,7 @@
           <h3>Concept to Production</h3>
           <p>
             Brief to shipment. We design, develop, source, sample, produce and inspect.
-            For brands building a carry range from scratch — this is the complete end-to-end.
+            For brands building a carry range from scratch, this is the complete end-to-end.
           </p>
           <ul class="svc-list">
             <li>Market research &amp; concept development</li>
@@ -1579,7 +1586,7 @@
           <h3>Development Support</h3>
           <p>
             You have designs. We handle the execution. Factory coordination, sampling management,
-            cost engineering and production oversight — the layer most remote teams struggle to run.
+            cost engineering and production oversight. The layer most remote teams struggle to run.
           </p>
           <ul class="svc-list">
             <li>Factory coordination &amp; sampling</li>
@@ -1597,7 +1604,7 @@
           <div class="svc-num">03</div>
           <h3>Manufacturing Access</h3>
           <p>
-            Already producing? We provide boots-on-ground oversight — factory visits,
+            Already producing? We provide on-site oversight. Factory visits,
             priority queue access, and the relationships that keep production on track.
           </p>
           <ul class="svc-list">
@@ -1675,7 +1682,7 @@
   <div id="factory-mosaic">
     <div class="mosaic-row mosaic-row-1">
       <div class="mosaic-cell w2">
-        <img src="images/index/factory/factory-floor-wide.jpg" alt="Factory floor — hundreds of skilled workers in production" loading="lazy" style="object-position:center 50%">
+        <img src="images/index/factory/factory-floor-wide.jpg" alt="Factory floor, hundreds of skilled workers in production" loading="lazy" style="object-position:center 50%">
       </div>
       <div class="mosaic-cell w1">
         <img src="images/index/factory/factory-assembly.jpg" alt="Skilled worker assembling bags on the production line" loading="lazy" style="object-position:center 40%">
@@ -1692,7 +1699,7 @@
         <img src="images/index/factory/factory-bags-floor.jpg" alt="Rows of finished backpacks on the factory floor" loading="lazy" style="object-position:center 40%">
       </div>
       <div class="mosaic-cell w14">
-        <img src="images/index/factory/factory-production-run.jpg" alt="Production run complete — backpacks lined up for inspection" loading="lazy" style="object-position:center 40%">
+        <img src="images/index/factory/factory-production-run.jpg" alt="Production run complete, backpacks lined up for inspection" loading="lazy" style="object-position:center 40%">
       </div>
     </div>
   </div>
@@ -1714,7 +1721,7 @@
           <div class="wlogo logo-light"><img src="images/logos/reika-white.svg" alt="brand logo" aria-hidden="true"></div></div>
           <div class="winfo">
             <div class="wbrand">Reika</div>
-            <div class="wtitle">Travel Pack 35L — Modular System</div>
+            <div class="wtitle">Travel Pack 35L | Modular System</div>
             <span class="wtag">Concept to Production</span>
           </div>
         </a>
@@ -1723,7 +1730,7 @@
           <div class="wlogo logo-light"><img src="images/logos/mous-white.svg" alt="brand logo" aria-hidden="true"></div></div>
           <div class="winfo">
             <div class="wbrand">Mous</div>
-            <div class="wtitle">Extreme Commuter Lid Backpack — 25L &amp; 18L</div>
+            <div class="wtitle">Extreme Commuter Lid Backpack | 25L &amp; 18L</div>
             <span class="wtag">Concept to Production</span>
           </div>
         </a>
@@ -1789,7 +1796,7 @@
             I am very fortunate to have been introduced to Stitch. Having them advise and manage my first production run and QC on the ground changed the outcome completely. Issues that would have slipped through or taken weeks of emails to resolve were caught and fixed before they reached us. The product that shipped was exactly what we approved. I look forward to working with Stitch again beyond just production, but for my entire product lifecycle. Their expertise and knowledge give me great confidence, and they are fun to work with!
           </p>
           <div class="testi-author">
-            <span class="testi-name">— Andy Lai, Founder &amp; CEO</span>
+            <span class="testi-name">Andy Lai, Founder &amp; CEO</span>
             <span class="testi-role">DVRGE · 2025</span>
           </div>
         </div>
@@ -1797,10 +1804,10 @@
         <!-- Will Mullen testimonial hidden - no genuine testimonial available
         <div class="testi-card">
           <p class="testi-quote">
-            Stitch built our supply chain, our design language, and developed multiple products from scratch — all with someone boots on the ground in Asia making it happen. We moved faster than we'd ever managed before. The infrastructure they put in place is still running.
+            Stitch built our supply chain, our design language, and developed multiple products from scratch. All with someone on the ground in Asia making it happen. We moved faster than we'd ever managed before. The infrastructure they put in place is still running.
           </p>
           <div class="testi-author">
-            <span class="testi-name">— Will Mullen, Co-Founder &amp; CPO</span>
+            <span class="testi-name">Will Mullen, Co-Founder &amp; CPO</span>
             <span class="testi-role">Mous · 2023</span>
           </div>
         </div>
@@ -1808,10 +1815,10 @@
 
         <div class="testi-card">
           <p class="testi-quote">
-            The design work was exactly what we needed. They understood our aesthetic quickly, came back with considered directions, and the final pouches reflect that. A straightforward process — no overengineering, just good work.
+            The design work was exactly what we needed. They understood our aesthetic quickly, came back with considered directions, and the final pouches reflect that. Straightforward process. No overengineering, just good work.
           </p>
           <div class="testi-author">
-            <span class="testi-name">— Alex Stewart, Founder</span>
+            <span class="testi-name">Alex Stewart, Founder</span>
             <span class="testi-role">Onenine5 · 2024</span>
           </div>
         </div>
@@ -1840,7 +1847,7 @@
             once a year. <em>We're there whenever it matters.</em>
           </h2>
           <p class="factory-body">
-            Being embedded in Asia isn't a selling point — it's how we work. On-site presence means priority queue access, direct contact with pattern makers, and problems solved before they reach you.
+            Being embedded in Asia isn't a selling point. It's how we work. On-site presence means priority queue access, direct contact with pattern makers, and problems solved before they reach you.
           </p>
           <div class="fstats">
             <div class="fstat">
@@ -1849,7 +1856,7 @@
             </div>
             <div class="fstat">
               <div class="fstat-n">On-site</div>
-              <div class="fstat-l">Factory presence — not remote management</div>
+              <div class="fstat-l">Factory presence: not remote management</div>
             </div>
             <div class="fstat">
               <div class="fstat-n">250</div>
